@@ -18,6 +18,56 @@
                 <span></span>Voltar para Home
             </a>
         </header>
+        <form action="">
+            <h1>Cadastro do Ponto de Coleta</h1>
+
+            <fieldset>
+                <legend>
+                    <h2>Dados da Entidade</h2>
+                </legend>
+
+                <div class="field">
+                    <label for="name">Nome da entidade</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="adress">Endereço</label>
+                        <input type="text" name="adress">
+                    </div>
+                    <div class="field">
+                        <label for="number">Número/Complemento</label>
+                        <input type="text" name="number">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="field">
+                        <label for="state">Estado</label>
+                        <select name="uf">
+                            <option value="">Selecione o estado:</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <select name="city" disabled>
+                            <option>
+                                Selecione a cidade:
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>
+                    <h2>Itens de Coleta</h2>
+                </legend>
+            </fieldset>
+
+            <button>
+                Cadastrar ponto de coleta
+            </button>
+        </form>
     </div>    
 </body>
 </html>
