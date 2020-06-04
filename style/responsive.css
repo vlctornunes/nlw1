@@ -1,0 +1,55 @@
+@media (max-width: 1050px){
+    #page-home{
+        height: 100vh;
+    }
+
+    #page-home .content{
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home header a{
+        position: absolute;
+        bottom: 48px;
+        left: 50%;
+        transform: translatex(-50%);
+    }
+
+    #page-home main{
+        align-items: center;
+    }
+}
+
+@media (min-width: 1051px){
+    #page-home{
+        height: 100vh;
+        background: url('../assets/home-background.svg') no-repeat;
+        background-position: 40vw bottom;
+
+    }
+}
+
+@media (max-height: 750px){
+    #page-home{
+        background-position-y: 100px;
+    }
+}
+
+@media (max-width: 500px){
+    #page-home header a{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        color: var(--title-color);
+        font-weight: 700;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    #page-home header a span{
+        display: flex;
+        background-image: url(../assets/log-in.svg);
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+}
