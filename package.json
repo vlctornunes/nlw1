@@ -1,0 +1,22 @@
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlctornunes/nlwProject.git"
+  },
+  "keywords": [],
+  "author": "Victor Nunes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vlctornunes/nlwProject/issues"
+  },
+  "homepage": "https://github.com/vlctornunes/nlwProject#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
