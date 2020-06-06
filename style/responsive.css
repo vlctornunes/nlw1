@@ -18,6 +18,15 @@
     #page-home main{
         align-items: center;
     }
+
+    /*da página de resultados de pontos de coleta*/
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
+    }
+
+    #page-search-results .cards img{
+        height: 300px;
+    }
 }
 
 @media (min-width: 1051px){
