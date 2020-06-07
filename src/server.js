@@ -73,6 +73,15 @@ server.post("/savepoint", (req, res) =>{
 //search-results
 server.get("/search-results", (req, res) => {
 
+    const cearch = req.query.search
+
+    //pesquisa
+    if(search==""){
+        //pesquisa vazia
+        //mostra a pag. HTML com os dados do DB
+        return res.render("search-results.html", { places: rows, total: 0})
+    }
+
     //código copiado de db2.js
     db.all('SELECT * FROM places', function(err, rows) {
         if(err){
