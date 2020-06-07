@@ -41,7 +41,17 @@ server.get("/create-point", (req, res) => {
 server.post("/savepoint", (req, res) =>{
 
     //inserir dados
-    const query = 'INSERT INTO places (image, name, address, address2, state, city, items) VALUES (?, ?, ?, ?, ?, ?, ?);'
+    const query = `
+        INSERT INTO places (
+            image, 
+            name, 
+            address, 
+            address2, 
+            state, 
+            city, 
+            items
+        ) VALUES (?, ?, ?, ?, ?, ?, ?);
+    `
 
     const values = [
         req.body.image,
@@ -75,7 +85,7 @@ server.get("/search-results", (req, res) => {
 
     const cearch = req.query.search
 
-    //pesquisa
+    //pesquisa!
     if(search==""){
         //pesquisa vazia
         //mostra a pag. HTML com os dados do DB
@@ -83,7 +93,7 @@ server.get("/search-results", (req, res) => {
     }
 
     //código copiado de db2.js
-    db.all('SELECT * FROM places', function(err, rows) {
+    db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows) {
         if(err){
             console.log(err)
         }
