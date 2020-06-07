@@ -33,12 +33,14 @@ server.get("/", (req, res) => {
 //create-point
 server.get("/create-point", (req, res) => {
     //o corpo do form
-    console.log(req.body)
+    //console.log(req.query)
 
-    return res.render("create-point.html")
+    return res.render("create-point.html", {saved: true})
 })
 
 server.post("/savepoint", (req, res) =>{
+    //o corpo do form
+    //console.log(req.body)
 
     //inserir dados
     const query = `
@@ -83,13 +85,13 @@ server.post("/savepoint", (req, res) =>{
 //search-results
 server.get("/search-results", (req, res) => {
 
-    const cearch = req.query.search
+    const search = req.query.search
 
     //pesquisa!
     if(search==""){
         //pesquisa vazia
         //mostra a pag. HTML com os dados do DB
-        return res.render("search-results.html", { places: rows, total: 0})
+        return res.render("search-results.html", { total: 0})
     }
 
     //código copiado de db2.js
