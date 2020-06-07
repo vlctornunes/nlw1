@@ -1,6 +1,9 @@
 const express = require("express")
 const server = express()
 
+//pegar o banco de dados
+const databas = require("./database/db3.js")
+
 //configurar pasta public
 server.use(express.static("public"))
 
