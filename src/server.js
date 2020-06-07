@@ -2,7 +2,7 @@ const express = require("express")
 const server = express()
 
 //pegar o banco de dados
-const databas = require("./database/db3.js")
+const db = require("./database/db")
 
 //configurar pasta public
 server.use(express.static("public"))
@@ -14,7 +14,6 @@ nunjucks.configure("src/views", {
     express: server,
     noCache: true
 })
-
 
 
 //configurar caminhos (rotas) da aplicação
@@ -36,7 +35,19 @@ server.get("/create-point", (req, res) => {
 
 //search-results
 server.get("/search-results", (req, res) => {
-    return res.render("search-results.html")
+
+    //código copiado de db2.js
+    db.all('SELECT * FROM places', function(err, rows) {
+        if(err){
+            console.log(err)
+        }
+
+        const total = rows.length
+
+        //mostra a pag. HTML com os dados do DB
+        return res.render("search-results.html", { places: rows, total: total})
+    })
+
 })
 
 

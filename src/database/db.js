@@ -4,32 +4,20 @@ const sqlite3 = require("sqlite3").verbose()
 //iniciar o objeto pras operações do DB
 const db = new sqlite3.Database("./src/database/database.db")
 
+module.exports = db
+
 //utiliar o objeto de banco de dados para nossas operações
 db.serialize(() => {
 
     //criar uma tabela
-    db.run('
-        CREATE TABLE IF NOT EXISTS places (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            image TEXT,
-            name TEXT,
-            address TEXT,
-            address2 TEXT,
-            state TEXT,
-            city TEXT,
-            items TEXT
-        );
-    ')
+    db.run('CREATE TABLE IF NOT EXISTS places (id INTEGER PRIMARY KEY AUTOINCREMENT, image TEXT, name TEXT, address TEXT, address2 TEXT, state TEXT, city TEXT, items TEXT);')
 
     //inserir dados
-    const query = '
-        INSERT INTO places (
-            image, name, address, address2, state, city, items
-        ) VALUES (?, ?, ?, ?, ?, ?, ?);'
+    const query = 'INSERT INTO places (image, name, address, address2, state, city, items) VALUES (?, ?, ?, ?, ?, ?, ?);'
 
     const values = [
-        "https://images.unsplash.com/photo-1480359014333-3935abd88252?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-        "Colectoria",
+        "https://images.unsplash.com/photo-1507560461415-997cd00bfd45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+        "Paperside",
         "R. Guiherme Gemballa, Jardim América",
         "Nº 260",
         "Santa Catarina",
